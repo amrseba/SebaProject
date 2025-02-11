@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/TxtDisplayinfolog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Page"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <EditText
+        android:id="@+id/edtEmailAddresslog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:hint="Example@ex.com"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TxtDisplayinfolog" />
+
+    <EditText
+        android:id="@+id/edtPasswordLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="15dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtEmailAddresslog" />
+
+    <Button
+        android:id="@+id/BtnLoginLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintTop_toBottomOf="@id/edtPasswordLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp" />
+
+    <Button
+        android:id="@+id/BtnRegisterLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintTop_toBottomOf="@id/BtnLoginLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="40dp" />
+
+    <TextView
+        android:id="@+id/edtLogininfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/BtnRegisterLog"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
