@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Toast;
+
 
 public class register extends AppCompatActivity {
     EditText edtusername,edtEmail,edtFname,edtLname,edtpassword;
@@ -49,16 +51,20 @@ public class register extends AppCompatActivity {
                         strEmail.isEmpty() || strPassword.isEmpty()){
                     txtRegisterinfo.setText("all field is required");
                     txtRegisterinfo.setTextColor(Color.RED);
-                }else{
+                } else{
                     dbConnect db = new dbConnect(register.this);
-                    Users newUser = new Users(strFname, strLname, strEmail, strUsername, strPassword);
-                    db.addUser(newUser);
+                    if (db.emailExists(strEmail)){
+                        txtRegisterinfo.setText("Email already exists");
+                        txtRegisterinfo.setTextColor(Color.RED);
+                    }else {
+                        Users newUser = new Users(strFname, strLname, strEmail, strUsername, strPassword);
+                        db.addUser(newUser);
 
-                    txtRegisterinfo.setText("register successful");
-                    txtRegisterinfo.setTextColor(Color.GREEN);
-                    Intent z = new Intent(register.this, MainActivity.class);
-                    startActivity(z);
-                    finish();
+                        Toast.makeText(register.this, "Register successful", Toast.LENGTH_LONG).show();
+                        Intent z = new Intent(register.this, MainActivity.class);
+                        startActivity(z);
+                        finish();
+                    }
                 }
             }
         });
